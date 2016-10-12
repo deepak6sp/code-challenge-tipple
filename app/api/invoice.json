@@ -1,0 +1,27 @@
+[
+  {
+    "supplier_id": 1,
+    "supplier_name": "ALM",
+    "invoice_number": 9000876,
+    "products": [
+      {
+        "product_id": 1,
+        "product_name": "Carlton Draught",
+        "unit_price": 2,
+        "units": 52
+      },
+      {
+        "product_id": 2,
+        "product_name": "Corona Extra Dry",
+        "unit_price": 2.2,
+        "units": 24
+      },
+      {
+        "product_id": 3,
+        "product_name": "VB",
+        "unit_price": 5.5,
+        "units": 96
+      }
+    ]
+  }
+]
