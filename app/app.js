@@ -36,12 +36,8 @@ app.controller('stockCtrl', function($scope, $http, $timeout) {
             $scope.red = "red"; 
           } 
         });
-
       });
-
-
   };
-  
 });
 
 
