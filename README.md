@@ -1,3 +1,4 @@
 # tipple_code_challenge
 
-run gulp to start server
+1) npm install
+2) run gulp to start server
