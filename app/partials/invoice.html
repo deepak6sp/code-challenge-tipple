@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">Invoice</div>
+        <div class="panel-body" ng-repeat="invoice in invoiceList">
+            <h4> Name - {{invoice.supplier_name}}</h4>
+            <h5> ID - {{invoice.supplier_id}}</h5>
+            <h5> Invoice - {{invoice.invoice_number}} </h5>
+            <table class="table table-striped"> 
+                <thead> 
+                    <tr> 
+                        <th>Product Id</th> 
+                        <th>Name</th> 
+                        <th>Unit Price</th> 
+                        <th>Units</th> 
+                    </tr> 
+                </thead> 
+                <tbody> 
+                    <tr ng-repeat = "product in invoice.products"> 
+                        <th scope="row">{{product.product_id}}</th> 
+                        <td>{{product.product_name}}</td> 
+                        <td>{{product.unit_price | currency:"$ "}}</td> 
+                        <td>{{product.units}}</td> 
+                    </tr> 
+                </tbody> 
+            </table>
+        </div>
+    </div>
+</div>

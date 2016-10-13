@@ -1,0 +1,32 @@
+ <div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading clearfix"> 
+            <div class='pull-left'><strong>Stock </strong></div>
+            <div class="pull-right">Search <input ng-model="searchKeyword"></div>
+        </div> 
+        <div class="panel-body" >
+            <table class="table table-striped"> 
+                <thead> 
+                    <tr> 
+                        <th>Product Id</th> 
+                        <th>Name</th> 
+                        <th>Cost Price</th> 
+                        <th>Sell Price</th> 
+                        <th>Units</th>
+                    </tr> 
+                </thead> 
+                <tbody> 
+                    <tr ng-repeat="product in stockList | filter: searchKeyword"> 
+                        <th scope="row">{{product.product_id}}</th> 
+                        <td>{{product.product_name}}</td> 
+                        <td>{{product.cost_price | currency:"$ "}}</td> 
+                        <td>{{product.sale_price | number : 3 | currency:"$ "}}</td> 
+                        <td>{{product.units}}</td> 
+                    </tr> 
+                </tbody> 
+            </table>
+        </div>
+    </div>
+    <button class="btn btn-primary" ng-click="update()">update stock</button> 
+    <div class="updated_invoice_number"></div>
+</div>

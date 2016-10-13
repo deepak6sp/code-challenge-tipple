@@ -11,63 +11,10 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     </head>
 
-    <body ng-controller="stockCtrl">
-        <div class="container">
-            <div class="panel panel-default">
-                <div class="panel-heading" ng-class="{red: red}">{{current}} Stock</div>
-                <div class="panel-body" >
-                    <table class="table table-striped"> 
-                        <thead> 
-                            <tr> 
-                                <th>Product Id</th> 
-                                <th>Name</th> 
-                                <th>Cost Price</th> 
-                                <th>Sell Price</th> 
-                                <th>Units</th>
-                            </tr> 
-                        </thead> 
-                        <tbody> 
-                            <tr ng-repeat="product in stockList"> 
-                                <th scope="row">{{product.product_id}}</th> 
-                                <td>{{product.product_name}}</td> 
-                                <td>{{product.cost_price | currency:"$ "}}</td> 
-                                <td>{{product.sale_price | number : 3 | currency:"$ "}}</td> 
-                                <td>{{product.units}}</td> 
-                            </tr> 
-                        </tbody> 
-                    </table>
-                </div>
-            </div>
-            <button class="btn btn-primary" ng-click="update()">update stock</button>
-        </div>
-        <div class="container">
-            <div class="panel panel-default">
-                <div class="panel-heading">Invoices</div>
-                <div class="panel-body" ng-repeat="invoice in invoiceList">
-                    <h4> Name - {{invoice.supplier_name}}</h4>
-                    <h5> ID - {{invoice.supplier_id}}</h5>
-                    <h5> Invoice - {{invoice.invoice_number}} </h5>
-                    <table class="table table-striped"> 
-                        <thead> 
-                            <tr> 
-                                <th>Product Id</th> 
-                                <th>Name</th> 
-                                <th>Unit Price</th> 
-                                <th>Units</th> 
-                            </tr> 
-                        </thead> 
-                        <tbody> 
-                            <tr ng-repeat = "product in invoice.products"> 
-                                <th scope="row">{{product.product_id}}</th> 
-                                <td>{{product.product_name}}</td> 
-                                <td>{{product.unit_price | currency:"$ "}}</td> 
-                                <td>{{product.units}}</td> 
-                            </tr> 
-                        </tbody> 
-                    </table>
-                </div>
-            </div>
-        </div>
+    <body  ng-controller="appCtrl">
+       
+        <div ng-include="'partials/stock.html'"></div>
+        <div ng-include="'partials/invoice.html'"></div>
         
         <script type="text/javascript" src="app.js"></script>
     </body>

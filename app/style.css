@@ -2,14 +2,9 @@ body {
     background-color: #f0f0f2;
     margin: 0;
     padding: 0;
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;   
 }
 
 .container{
 	margin-top:50px;
-}
-
-.red{
-	color:red!important;
 }
