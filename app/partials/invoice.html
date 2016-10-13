@@ -1,10 +1,19 @@
 <div class="container">
     <div class="panel panel-default">
-        <div class="panel-heading">Invoice</div>
-        <div class="panel-body" ng-repeat="invoice in invoiceList">
-            <h4> Name - {{invoice.supplier_name}}</h4>
-            <h5> ID - {{invoice.supplier_id}}</h5>
-            <h5> Invoice - {{invoice.invoice_number}} </h5>
+        <div class="panel-heading clearfix">
+            <div class='pull-left'>Invoice</div>
+            <div class='pull-right'>
+                Select Supplier <select ng-model="selectedInvoice" ng-options="invoice.supplier_name for invoice in invoiceList">
+                </select>
+            </div>
+        </div>
+        <div class="panel-body" ng-if="!selectedInvoice">
+            please select supplier to display from dropdown on the right
+        </div>
+        <div class="panel-body" ng-if="selectedInvoice">
+            <h4> Name - {{selectedInvoice.supplier_name}}</h4>
+            <h5> ID - {{selectedInvoice.supplier_id}}</h5>
+            <h5> Invoice - {{selectedInvoice.invoice_number}} </h5>
             <table class="table table-striped"> 
                 <thead> 
                     <tr> 
@@ -15,7 +24,7 @@
                     </tr> 
                 </thead> 
                 <tbody> 
-                    <tr ng-repeat = "product in invoice.products"> 
+                    <tr ng-repeat = "product in selectedInvoice.products"> 
                         <th scope="row">{{product.product_id}}</th> 
                         <td>{{product.product_name}}</td> 
                         <td>{{product.unit_price | currency:"$ "}}</td> 

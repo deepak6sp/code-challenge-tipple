@@ -50,6 +50,7 @@ app.controller('appCtrl', function($scope, $timeout, getApi) {
           } 
         });
       });
+    
       var update_text = document.getElementsByClassName("updated_invoice_number");
       update_text[0].innerHTML = " Invoice "+invoice[0].invoice_number+" successfully added to stock";
       track_invoice.push(invoice[0].invoice_number);
